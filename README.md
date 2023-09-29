@@ -1,3 +1,4 @@
 # webappflask
 # Crear el entorno virtual: python -m venv env
-# env\Scripts\activate
+# Activar el entorno virtual: env\Scripts\activate
+# Desactivar el entorno virtual: deactivate

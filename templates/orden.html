@@ -1,0 +1,176 @@
+{% extends "base.html" %}
+{% block titulo %}Registro de Orden{% endblock %}
+
+{% block contenido %}
+<br>
+<br>
+<div class="card col-12">
+   <div class="card-header text-center mb-4">
+        <h5>Registro de orden</h5>
+   </div>
+   <form class="row g-2 needs-validation" novalidate>
+    <div class="mb-3 row">
+        <label for="cedula" class="col-sm-2 col-form-label">Cédula</label>
+        <div class="col-sm-4">
+          <input type="text" class="form-control" id="cedula" required>
+        <div class="valid-feedback">
+      
+        </div>
+        <div class="invalid-feedback">
+          Es necesario escribir su numero de cedula
+        </div>
+      </div>
+        <!-- Button Ventana modal -->
+        <div class="col-sm-4 mb-4">
+            <a href="{{url_for('cliente')}}"
+            data-bs-toggle="tooltip" data-bs-placement="top"
+            data-bs-custom-class="custom-tooltip"
+            data-bs-title="Buscar datos del cliente..." 
+            type="button" class="btn btn-outline-success">
+            <i class="fa-solid fa-magnifying-glass"></i> Buscar</a>
+        </div>
+        <!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Registro de Cliente</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          Estamos en contruccion
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-primary">Guardar</button> 
+            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Salir </button>
+        </div>
+      </div>
+    </div>
+  </div>
+          <div class="col-md-6 mb-4">
+            <label for="form-control" class="form-label">Nombres</label>
+            <input type="text" class="form-control" id="cedula" required>
+            <div class="valid-feedback">
+                
+            </div>
+            <div class="invalid-feedback">
+                Es necesario escribir el nombre
+            </div>
+        </div>
+        <div class="col-md-6 mb-4">
+            <label for="form-control">Apellidos</label>
+            <input type="text" class="form-control" id="apellidos" required>
+            <div class="valid-feedback">
+      
+            </div>
+            <div class="invalid-feedback">
+              Es necesario escribir los apellidos
+            </div>
+        </div>
+        <div class="col-md-10">
+            <p>Orden:</p>
+        </div>
+        <div class="col-md-8">
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="orden" value="" id="bordado" checked>
+                <label class="form-check-label" for="orden">
+                  Bordado
+                </label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="orden" id="sublimar">
+                <label class="form-check-label" for="orden">
+                  Sublimación
+                </label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="orden" id="impresion">
+                <label class="form-check-label" for="orden">
+                  Impresión Dígital
+                </label>
+              </div>
+              <div class="mb-4 form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="orden" id="otros">
+                <label class="form-check-label" for="orden">
+                  otros
+                </label>
+              </div>   
+        </div>
+        <div class="col-sm-4 mb-4">
+            <button type="" 
+            data-bs-toggle="tooltip" data-bs-placement="top"
+            data-bs-custom-class="custom-tooltip"
+            data-bs-title="Agregar a la lista de orden" 
+            class="btn btn-success"><i class="fa-solid fa-file-pen"></i> AGREGAR...</button>
+        </div>
+        <div class="col-md-4">
+            <label for="form-label">Nombre producto</label>
+            <input class="form-control" type="text" id="nproducto" name="nproducto" required>
+            <div class="valid-feedback">
+      
+            </div>
+            <div class="invalid-feedback">
+              Es necesario el nombre del producto
+            </div>
+        </div>
+        <div class="col-md-2">
+            <button type="" 
+            data-bs-toggle="tooltip" data-bs-placement="top"
+            data-bs-custom-class="custom-tooltip"
+            data-bs-title="Buscar datos del producto a ordenar..." 
+            class="btn btn-outline-success"><i class="fa-solid fa-magnifying-glass"></i> Buscar</button>
+        </div>
+        <div class="col-auto">
+            <label for="form-label">Cantidad</label>
+            <input class="form-control" type="text" id="cantidadP" name="cantidadP" required>
+            <div class="valid-feedback">
+      
+            </div>
+            <div class="invalid-feedback">
+              Es necesario la cantidad
+            </div>
+        </div>
+        <div class="col-auto mb-4">
+            <label for="form-control">Precio</label>
+            <input type="text" class="form-control" id="precio" name="precio" required>
+            <div class="valid-feedback">
+      
+            </div>
+            <div class="invalid-feedback">
+              Es necesario el precio
+            </div>
+        </div>
+        <div class="table-responsive">
+            <table class="table table-striped table-hover">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Codigo</th>
+                        <th>Producto</th>
+                        <th>Cantidad</th>
+                        <th>Precio</th>
+                        <th>SUB-TOTAL</th>
+                        <th>Acciones</th>
+                    </tr>
+                    </thead>
+                    <tbody class="table-group-divider">
+                        <tr class="table-primary" >
+                            <td scope="row">Item</td>
+                            <td>Item</td>
+                            <td>Item</td>
+                            <td>Item</td>
+                            <td>Item</td>
+                            <td>
+                                <a href="#" class="btn btn-primary btn-sm" role="button"><i class="fa-solid fa-pencil"></i>Editar</a>
+                                <a href="#" class="btn btn-danger btn-sm" role="button"><i class="fa-solid fa-trash-can"></i>Eliminar</a>
+                            </td>
+                        </tr>
+                    </tbody>
+            </table>
+        </div>
+        <div class="text-center">
+            <button class="btn btn-outline-primary rounded-pill" type="submit">Guardar...</button>
+        </div>
+   </form>
+</div>
+
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends "baselogin.html" %}
+
+{% block titulo %}Acceso al Sistema{% endblock %}
+
+{% block contenido %}
+
+<div class="container">
+    <div class="row vh-100 align-items-center justify-content-center">
+        <div class="col-sm-8 col-md-6 col-lg-4 bg-white rounded p-4 shadow">
+            <div class="row justify-content-center mb-4">
+                <img class="col-sm-8" src="{{url_for('static', filename='img/logo1.jpg')}}" alt="Logo publicidad Villanueva" width="75" height="175">
+                <h2 class="h3 mb-3 text-center fw-normal">Bienvenidos</h2>
+                <form class="row g-3 needs-validation" novalidate method="" action="">
+                    <div class="mb-4 form-floating">
+                        <input type="email" class="form-control" id="email" placeholder="Correo Electrónico" required>
+                        <label for="email" class="form-label"> Correo Electrónico</label>
+                    </div>
+                    <div class="mb-4 form-floating">
+                        <input type="password" class="form-control" id="password" placeholder="Contraseña" required>
+                        <label for="password" class="form-label"> Contraseña</label>
+                        <div class="invalid-tooltip">
+                            Por favor ingresar su Usuario.
+                        </div>
+                    </div>
+
+                    <div class="mb-4">
+                        <button type="submit" class="btn btn btn-outline-primary w-100">Enviar</button>
+                    </div>
+                </form>
+                <p class="mb-0 text-center">No esta Registrado <a href="{{url_for('registro')}}" class="text-decoration-none">Registrate</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
